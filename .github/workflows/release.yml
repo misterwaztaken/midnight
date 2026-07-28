@@ -1,0 +1,39 @@
+name: build release apk
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: set up jdk 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: decode keystore
+        run: |
+          echo "${{ secrets.KEYSTORE_FILE }}" | base64 --decode > app/midnight.jks
+
+      - name: make gradlew executable
+        run: chmod +x gradlew
+
+      - name: build release apk
+        run: ./gradlew assembleRelease
+        env:
+          SIGNING_STORE_FILE: midnight.jks
+          SIGNING_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          SIGNING_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+
+      - name: upload apk to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: app/build/outputs/apk/release/app-release.apk
