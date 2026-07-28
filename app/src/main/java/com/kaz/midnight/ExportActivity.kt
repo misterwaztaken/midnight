@@ -77,9 +77,12 @@ class ExportActivity : AppCompatActivity() {
 
     private fun saveFileToUri(uri: Uri) {
         Thread {
-            val dreams = db.dreamDao().getAllSync() // need a regular list not livedata
+            val dreams = db.dreamDao().getAllSync()
+            val tags = db.dreamDao().getAllTags()
+            val crossRefs = db.dreamDao().getAllCrossRefs()
+
             val content = if (selectedFormat == "JSON") {
-                Gson().toJson(dreams)
+                Gson().toJson(ExportData(dreams, tags, crossRefs))
             } else {
                 buildString {
                     dreams.forEach {

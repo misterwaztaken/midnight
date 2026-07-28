@@ -85,6 +85,9 @@ interface DreamDao {
     @Query("SELECT * FROM dreams")
     fun getAllSync(): List<Dream>
 
+    @Query("SELECT * FROM DreamTagCrossRef")
+    fun getAllCrossRefs(): List<DreamTagCrossRef>
+
     @Query("SELECT * FROM dreams WHERE content = :content AND creationDate = :date LIMIT 1")
     fun findDuplicate(content: String, date: String): Dream?
 }

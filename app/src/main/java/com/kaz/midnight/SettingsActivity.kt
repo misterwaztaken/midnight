@@ -19,27 +19,72 @@ class SettingsActivity : AppCompatActivity() {
 
         Thread {
             try {
-                // read the file into a string
                 val inputStream = contentResolver.openInputStream(uri)
                 val jsonString = inputStream?.bufferedReader().use { it?.readText() } ?: ""
 
-                // parse the json
-                val listType = object : com.google.gson.reflect.TypeToken<List<Dream>>() {}.type
-                val importedDreams: List<Dream> = com.google.gson.Gson().fromJson(jsonString, listType)
+                val importedCount: Int
+                val duplicateCount: Int
 
-                var importedCount = 0
-                var duplicateCount = 0
+                try {
+                    // try new format (ExportData with tags and cross-refs)
+                    val backup = com.google.gson.Gson().fromJson(jsonString, ExportData::class.java)
 
-                // loop through and skip duplicates
-                importedDreams.forEach { dream ->
-                    val existing = db.dreamDao().findDuplicate(dream.content, dream.creationDate)
-                    if (existing == null) {
-                        // set id to 0 so room gives it a new one
-                        db.dreamDao().insert(dream.copy(id = 0))
-                        importedCount++
-                    } else {
-                        duplicateCount++
+                    // insert tags, mapping old ids to new ids
+                    val tagIdMap = mutableMapOf<Int, Int>()
+                    backup.tags.forEach { tag ->
+                        val existing = db.dreamDao().getTagByName(tag.name)
+                        if (existing != null) {
+                            tagIdMap[tag.id] = existing.id
+                        } else {
+                            val newId = db.dreamDao().insertTag(tag.copy(id = 0))
+                            tagIdMap[tag.id] = newId.toInt()
+                        }
                     }
+
+                    // insert dreams, mapping old ids to new ids
+                    val dreamIdMap = mutableMapOf<Int, Int>()
+                    var dups = 0
+                    backup.dreams.forEach { dream ->
+                        val existing = db.dreamDao().findDuplicate(dream.content, dream.creationDate)
+                        if (existing == null) {
+                            val newId = db.dreamDao().insert(dream.copy(id = 0))
+                            dreamIdMap[dream.id] = newId.toInt()
+                        } else {
+                            dreamIdMap[dream.id] = existing.id
+                            dups++
+                        }
+                    }
+
+                    // restore cross-refs using mapped ids
+                    backup.crossRefs.forEach { ref ->
+                        val newDreamId = dreamIdMap[ref.dreamId]
+                        val newTagId = tagIdMap[ref.tagId]
+                        if (newDreamId != null && newTagId != null) {
+                            db.dreamDao().insertDreamTagCrossRef(
+                                DreamTagCrossRef(dreamId = newDreamId, tagId = newTagId)
+                            )
+                        }
+                    }
+
+                    importedCount = backup.dreams.size - dups
+                    duplicateCount = dups
+                } catch (e: Exception) {
+                    // fall back to old format (just a list of dreams, no tags)
+                    val listType = object : com.google.gson.reflect.TypeToken<List<Dream>>() {}.type
+                    val importedDreams: List<Dream> = com.google.gson.Gson().fromJson(jsonString, listType)
+
+                    var dups = 0
+                    importedDreams.forEach { dream ->
+                        val existing = db.dreamDao().findDuplicate(dream.content, dream.creationDate)
+                        if (existing == null) {
+                            db.dreamDao().insert(dream.copy(id = 0))
+                        } else {
+                            dups++
+                        }
+                    }
+
+                    importedCount = importedDreams.size - dups
+                    duplicateCount = dups
                 }
 
                 runOnUiThread {
