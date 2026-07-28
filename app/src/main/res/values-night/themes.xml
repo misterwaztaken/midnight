@@ -1,0 +1,21 @@
+<resources>
+    <style name="Theme.Midnight" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">#0F0F1E</item>
+        <item name="colorSurface">#1A1A2E</item>
+        <item name="colorSurfaceVariant">#16213E</item>
+
+        <item name="colorPrimary">#6750A4</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <item name="colorSecondary">#E94560</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#A0A0A0</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+        <item name="colorOnSurfaceVariant">#E0E0E0</item>
+
+        <item name="android:statusBarColor">#0F0F1E</item>
+        <item name="android:navigationBarColor">#0F0F1E</item>
+    </style>
+</resources>

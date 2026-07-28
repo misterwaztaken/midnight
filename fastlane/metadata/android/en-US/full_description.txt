@@ -1,0 +1,4 @@
+Midnight
+
+Midnight is a dream journal app for Android designed to be straightforward and easy to use, without any purchases or ads.
+It is and will remain free, and fully open source.
