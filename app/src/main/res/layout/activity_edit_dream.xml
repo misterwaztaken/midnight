@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/activity_bg_dark"
+    android:background="?attr/activityBackground"
     android:fitsSystemWindows="true">
 
     <androidx.core.widget.NestedScrollView
@@ -28,8 +28,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:letterSpacing="0.2"
-                    android:text="NEW DREAM
-"
+                    android:text="NEW DREAM"
                     android:textColor="@color/secondary"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -46,7 +45,7 @@
                         android:layout_height="40dp"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:src="@drawable/ic_info"
-                        app:tint="@color/text_secondary" />
+                        app:tint="?android:attr/textColorSecondary" />
 
                     <CheckBox
                         android:id="@+id/checkFavorite"
@@ -69,8 +68,8 @@
                 android:inputType="textMultiLine|textCapSentences"
                 android:lineSpacingExtra="8dp"
                 android:minLines="12"
-                android:textColor="@color/text_primary"
-                android:textColorHint="@color/text_hint"
+                android:textColor="?attr/colorOnSurface"
+                android:textColorHint="?android:attr/textColorHint"
                 android:textSize="18sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -85,7 +84,7 @@
                 app:boxCornerRadiusTopEnd="16dp"
                 app:boxCornerRadiusTopStart="16dp"
                 app:hintTextColor="@color/secondary"
-                app:startIconTint="@color/text_secondary">
+                app:startIconTint="?android:attr/textColorSecondary">
 
                 <MultiAutoCompleteTextView
                     android:id="@+id/tagAutoComplete"
@@ -93,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
                     android:padding="16dp"
-                    android:textColor="@color/text_primary"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -107,11 +106,10 @@
                 android:elevation="4dp"
                 android:letterSpacing="0.1"
                 android:text="SAVE TO JOURNAL"
-                android:textColor="@color/text_primary"
+                android:textColor="?attr/colorOnSurface"
                 android:textStyle="bold"
                 app:cornerRadius="18dp" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

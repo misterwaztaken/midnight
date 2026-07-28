@@ -4,9 +4,14 @@
         <item name="colorSurface">#FFFFFF</item>
 
         <item name="colorPrimary">#6750A4</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
         <item name="colorSecondary">#E94560</item>
 
         <item name="colorOnSurface">#1A1A2E</item>
         <item name="android:textColorPrimary">#1A1A2E</item>
+        <item name="colorSurfaceVariant">#E8E0EC</item>
+
+        <item name="activityBackground">#F5F5F7</item>
+        <item name="dialogBackground">#FFFFFF</item>
     </style>
 </resources>

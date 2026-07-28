@@ -26,10 +26,10 @@
         android:layout_marginTop="8dp"
         app:chipSpacingHorizontal="8dp"
         app:chipSpacingVertical="8dp"
-                app:chipBackgroundColor="@color/chip_bg"
+                app:chipBackgroundColor="?attr/colorSurfaceVariant"
                 app:chipStrokeColor="@color/secondary"
         app:chipStrokeWidth="1dp"
-        android:textColor="@color/text_primary"
+        android:textColor="?attr/colorOnSurface"
         />
 
     <LinearLayout

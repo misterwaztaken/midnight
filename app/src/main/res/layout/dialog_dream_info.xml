@@ -4,13 +4,13 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="@color/dialog_bg_dark">
+    android:background="?attr/dialogBackground">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FIRST CREATED"
-        android:textColor="@color/text_secondary"
+        android:textColor="?android:attr/textColorSecondary"
         android:textSize="12sp"
         android:textStyle="bold"
         android:letterSpacing="0.1" />
@@ -20,14 +20,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/text_primary"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="16sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LAST MODIFIED"
-        android:textColor="@color/text_secondary"
+        android:textColor="?android:attr/textColorSecondary"
         android:textSize="12sp"
         android:textStyle="bold"
         android:letterSpacing="0.1" />
@@ -36,7 +36,7 @@
         android:id="@+id/textModified"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/text_primary"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="16sp" />
 
     <TextView
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="STATS"
-        android:textColor="@color/text_secondary"
+        android:textColor="?android:attr/textColorSecondary"
         android:textSize="12sp"
         android:textStyle="bold"
         android:letterSpacing="0.1" />
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0 words | 0 characters"
-        android:textColor="@color/text_primary"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="16sp" />
 
 </LinearLayout>

@@ -4,23 +4,33 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="@color/dialog_bg_dark">
+    android:background="?attr/dialogBackground">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialogTitle"
+        android:text="New Tag"
+        android:textColor="@color/tag_default"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="Tag Name"
         android:textColor="@color/tag_default"
-        android:textSize="14sp"
-        android:layout_marginBottom="8dp"/>
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/editTagName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="e.g. Lucid, Nightmare"
-        android:textColor="@color/text_primary"
-        android:textColorHint="#66FFFFFF"
+        android:textColor="?attr/colorOnSurface"
+        android:textColorHint="?android:attr/textColorHint"
         android:backgroundTint="@color/tag_default"
         android:inputType="textCapWords" />
 
@@ -30,8 +40,8 @@
         android:text="Tag Color"
         android:textColor="@color/tag_default"
         android:textSize="14sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="4dp"/>
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +54,7 @@
             android:id="@+id/colorPreview"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="6dp"
             android:background="@drawable/circle_shape" />
 
         <EditText
@@ -53,11 +63,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@color/tag_default"
-            android:textColor="@color/text_primary"
-            android:textColorHint="#66FFFFFF"
+            android:textColor="?attr/colorOnSurface"
+            android:textColorHint="?android:attr/textColorHint"
             android:backgroundTint="@color/tag_default"
             android:inputType="text"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="6dp" />
 
         <Button
             android:id="@+id/btnPickColor"
@@ -68,5 +78,32 @@
             style="@style/Widget.Material3.Button.TonalButton" />
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
 
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            style="@style/Widget.Material3.Button.TextButton" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:textAllCaps="false"
+            style="@style/Widget.Material3.Button.TonalButton" />
+
+    </LinearLayout>
 </LinearLayout>

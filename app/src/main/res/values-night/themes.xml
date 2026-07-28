@@ -17,5 +17,8 @@
 
         <item name="android:statusBarColor">#0F0F1E</item>
         <item name="android:navigationBarColor">#0F0F1E</item>
+
+        <item name="activityBackground">#121212</item>
+        <item name="dialogBackground">#1E1E1E</item>
     </style>
 </resources>

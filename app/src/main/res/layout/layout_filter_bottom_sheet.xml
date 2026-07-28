@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/filter_sheet_bg"
+    android:background="?attr/colorSurface"
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -11,14 +11,14 @@
         android:layout_width="40dp"
         android:layout_height="4dp"
         android:layout_gravity="center"
-        android:background="@color/text_hint"
+        android:background="?android:attr/textColorHint"
         android:layout_marginBottom="16dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Filter Dreams"
-        android:textColor="@color/text_primary"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tags:"
-        android:textColor="@color/text_secondary"
+        android:textColor="?android:attr/textColorSecondary"
         android:layout_marginTop="16dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -39,7 +39,7 @@
             android:id="@+id/filterTagInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_primary"
+            android:textColor="?attr/colorOnSurface"
             android:completionThreshold="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -54,7 +54,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Only show favorites"
-            android:textColor="@color/text_primary"/>
+            android:textColor="?attr/colorOnSurface"/>
 
         <CheckBox
             android:id="@+id/filterFavCheck"
@@ -70,5 +70,5 @@
         android:layout_marginTop="20dp"
         android:text="Set Filter"
             android:backgroundTint="@color/secondary"
-            android:textColor="@color/text_primary"/>
+            android:textColor="?attr/colorOnSurface"/>
 </LinearLayout>

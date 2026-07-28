@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.SeekBar
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -70,6 +71,12 @@ class TagsActivity : AppCompatActivity() {
         val colorPreview = dialogView.findViewById<View>(R.id.colorPreview)
         val hexInput = dialogView.findViewById<EditText>(R.id.editTagColor)
         val btnPickColor = dialogView.findViewById<Button>(R.id.btnPickColor)
+        val dialogTitle = dialogView.findViewById<TextView>(R.id.dialogTitle)
+        val btnCancel = dialogView.findViewById<Button>(R.id.btnCancel)
+        val btnConfirm = dialogView.findViewById<Button>(R.id.btnConfirm)
+
+        dialogTitle.text = if (tag == null) "New Tag" else "Edit Tag"
+        btnConfirm.text = if (tag == null) "Create" else "Update"
 
         var selectedColor = Color.parseColor(tag?.colorHex ?: Tag.DEFAULT_HEX)
 
@@ -156,6 +163,8 @@ class TagsActivity : AppCompatActivity() {
                 .setCancelable(true)
                 .create()
 
+            pickerDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
             btnApply.setOnClickListener {
                 val hexText = hexField.text.toString().trim()
                 val parsed = try {
@@ -172,30 +181,36 @@ class TagsActivity : AppCompatActivity() {
 
         btnPickColor.setOnClickListener { showColorPicker(selectedColor) }
 
-        AlertDialog.Builder(this)
-            .setTitle(if (tag == null) "New Tag" else "Edit Tag")
+        val tagDialog = AlertDialog.Builder(this)
             .setView(dialogView)
-            .setPositiveButton(if (tag == null) "Create" else "Update") { _, _ ->
-                val name = nameInput.text.toString().trim()
-                val color = hexInput.text.toString().trim().ifEmpty { Tag.DEFAULT_HEX }
+            .create()
 
-                if (name.isNotEmpty()) {
-                    Thread {
-                        if (tag == null) {
-                            db.dreamDao().insertTag(Tag(name = name, colorHex = color))
-                        } else {
-                            db.dreamDao().updateTag(tag.copy(name = name, colorHex = color))
-                        }
-                        loadTags()
-                    }.start()
-                }
+        tagDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        btnCancel.setOnClickListener { tagDialog.dismiss() }
+
+        btnConfirm.setOnClickListener {
+            val name = nameInput.text.toString().trim()
+            val color = hexInput.text.toString().trim().ifEmpty { Tag.DEFAULT_HEX }
+
+            if (name.isNotEmpty()) {
+                Thread {
+                    if (tag == null) {
+                        db.dreamDao().insertTag(Tag(name = name, colorHex = color))
+                    } else {
+                        db.dreamDao().updateTag(tag.copy(name = name, colorHex = color))
+                    }
+                    loadTags()
+                }.start()
+                tagDialog.dismiss()
             }
-            .setNegativeButton("Cancel", null)
-            .show()
+        }
+
+        tagDialog.show()
     }
 
     private fun confirmDelete(tag: Tag) {
-        AlertDialog.Builder(this)
+        val dialog = AlertDialog.Builder(this)
             .setTitle("Delete Tag?")
             .setMessage("Remove '${tag.name}'? This won't delete your dreams.")
             .setPositiveButton("Delete") { _, _ ->
@@ -205,7 +220,10 @@ class TagsActivity : AppCompatActivity() {
                 }.start()
             }
             .setNegativeButton("Cancel", null)
-            .show()
+            .create()
+
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.show()
     }
 
     // search/filter
