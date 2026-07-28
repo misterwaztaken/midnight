@@ -1,6 +1,9 @@
 package com.kaz.midnight
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatDelegate
@@ -25,6 +28,10 @@ class AboutActivity : AppCompatActivity() {
 
         toolbar.setNavigationOnClickListener {
             finish()
+        }
+
+        findViewById<TextView>(R.id.txtGitHub).setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/misterwaztaken/midnight")))
         }
     }
 }
