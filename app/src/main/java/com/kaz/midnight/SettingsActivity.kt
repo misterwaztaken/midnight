@@ -22,8 +22,8 @@ class SettingsActivity : AppCompatActivity() {
                 val inputStream = contentResolver.openInputStream(uri)
                 val jsonString = inputStream?.bufferedReader().use { it?.readText() } ?: ""
 
-                val importedCount: Int
-                val duplicateCount: Int
+                var importedCount = 0
+                var duplicateCount = 0
 
                 try {
                     // try new format (ExportData with tags and cross-refs)
