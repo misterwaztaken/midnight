@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/dialogTitle"
         android:text="New Tag"
-        android:textColor="@color/tag_default"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginBottom="16dp"/>
