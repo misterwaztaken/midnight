@@ -1,8 +1,42 @@
-![Midnight icon](icon.webp)
+<div align="center">
+  <img src="fastlane/metadata/android/en-US/images/icon.png" width="100" alt="Midnight icon" />
+  <h1>Midnight</h1>
+  <p>A simple, no-nonsense dream journal for Android.</p>
 
-## Midnight
+  <img src="https://img.shields.io/github/v/release/misterwaztaken/midnight?style=flat-square&color=7B3FC4" alt="Latest Release" />
+  <img src="https://img.shields.io/github/license/misterwaztaken/midnight?style=flat-square&color=7B3FC4" alt="License" />
+  <img src="https://img.shields.io/badge/platform-Android-7B3FC4?style=flat-square" alt="Platform" />
+</div>
 
-Midnight is a dream journaling app for Android with the core focus of being really easy-to-use and really friendly to the user.
+---
 
-*(this readme is not fully written yet!)*
+Midnight is a dream journaling app for Android. The goal is to keep it easy to use and user-friendly: open it, write your dream, done.
 
+## Screenshots
+
+<div align="center">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/01.png" width="19%" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/05.png" width="19%" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/03.png" width="19%" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/02.png" width="19%" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/04.png" width="19%" />
+</div>
+
+## Features
+
+- **Tagging**: organize your entries with custom color-coded tags. nightmare, lucid, fever dream, whatever works for you
+- **Favorites**: star entries to mark the ones worth remembering
+- **Filtering**: filter your journal by tag, favorites, or both
+- **Export and import**: back up your entries as JSON, or export to plain text if you're moving to another app
+- **Themes**: dark mode and light mode, pick your poison
+- **It's local**: no accounts, no cloud, no data leaving your device
+
+## Download
+
+Grab the latest APK from the [Releases](https://github.com/misterwaztaken/midnight/releases) page.
+
+(F-Droid support is coming soon.)
+
+## License
+
+[GPL-3.0](LICENSE)
