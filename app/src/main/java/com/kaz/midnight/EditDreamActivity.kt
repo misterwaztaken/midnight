@@ -1,7 +1,6 @@
 package com.kaz.midnight
 
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.*
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
@@ -24,8 +23,7 @@ class EditDreamActivity : AppCompatActivity() {
         db = AppDatabase.getDatabase(this)
         dreamId = intent.getIntExtra("DREAM_ID", -1)
 
-        // toolbar back arrow
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val header = findViewById<TextView>(R.id.txtEditHeader)
 
         val input = findViewById<EditText>(R.id.editDreamContent)
         val tagInput = findViewById<MultiAutoCompleteTextView>(R.id.tagAutoComplete)
@@ -46,6 +44,7 @@ class EditDreamActivity : AppCompatActivity() {
 
         // load dream data if we're editing an existing one
         if (dreamId != -1) {
+            header.text = "EDIT DREAM"
             Thread {
                 currentDream = db.dreamDao().getById(dreamId)
                 val tagsForDream = db.dreamDao().getTagsForDream(dreamId)
@@ -74,10 +73,11 @@ class EditDreamActivity : AppCompatActivity() {
                     finish()
                 } else {
                     AlertDialog.Builder(this@EditDreamActivity)
-                        .setTitle("Discard Changes?")
-                        .setMessage("You have unsaved changes. Are you sure you want to leave?")
-                        .setPositiveButton("Discard") { _, _ -> finish() }
-                        .setNegativeButton("Keep Editing", null)
+                        .setTitle("Unsaved Changes")
+                        .setMessage("Save your changes before leaving?")
+                        .setPositiveButton("Save") { _, _ -> updateBtn.performClick() }
+                        .setNegativeButton("Discard") { _, _ -> finish() }
+                        .setNeutralButton("Cancel", null)
                         .show()
                 }
             }
@@ -154,17 +154,6 @@ class EditDreamActivity : AppCompatActivity() {
                     finish()
                 }
             }.start()
-        }
-    }
-
-    // toolbar back arrow and delete
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                onBackPressedDispatcher.onBackPressed()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
         }
     }
 

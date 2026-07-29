@@ -1,124 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/activityBackground"
+    android:orientation="vertical"
     android:fitsSystemWindows="true">
 
-    <androidx.core.widget.NestedScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:paddingBottom="0dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp">
+            android:layout_marginBottom="16dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/txtEditHeader"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp">
+                android:layout_centerVertical="true"
+                android:layout_marginStart="4dp"
+                android:letterSpacing="0.2"
+                android:text="NEW DREAM"
+                android:textColor="@color/secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:letterSpacing="0.2"
-                    android:text="NEW DREAM"
-                    android:textColor="@color/secondary"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/btnDeleteDream"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:src="@android:drawable/ic_menu_delete"
-                        app:tint="?android:attr/textColorSecondary" />
-
-                    <ImageButton
-                        android:id="@+id/btnDreamInfo"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="8dp"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:src="@drawable/ic_info"
-                        app:tint="?android:attr/textColorSecondary" />
-
-                    <CheckBox
-                        android:id="@+id/checkFavorite"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="8dp"
-                        android:button="@drawable/ic_star_filled"
-                        android:buttonTint="@color/star_tint" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <EditText
-                android:id="@+id/editDreamContent"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:gravity="top"
-                android:hint="What happened in the moonlight?..."
-                android:importantForAutofill="no"
-                android:inputType="textMultiLine|textCapSentences"
-                android:lineSpacingExtra="8dp"
-                android:minLines="12"
-                android:textColor="?attr/colorOnSurface"
-                android:textColorHint="?android:attr/textColorHint"
-                android:textSize="18sp" />
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:hint="Tags (comma seperated)"
-                app:boxStrokeColor="@color/secondary"
-                app:boxCornerRadiusBottomEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusTopStart="16dp"
-                app:hintTextColor="@color/secondary"
-                app:startIconTint="?android:attr/textColorSecondary">
+                <ImageButton
+                    android:id="@+id/btnDeleteDream"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_menu_delete"
+                    app:tint="?android:attr/textColorSecondary" />
 
-                <MultiAutoCompleteTextView
-                    android:id="@+id/tagAutoComplete"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textMultiLine"
-                    android:padding="16dp"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="14sp" />
+                <ImageButton
+                    android:id="@+id/btnDreamInfo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_info"
+                    app:tint="?android:attr/textColorSecondary" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+                <CheckBox
+                    android:id="@+id/checkFavorite"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:button="@drawable/ic_star_filled"
+                    android:buttonTint="@color/star_tint" />
+            </LinearLayout>
+        </RelativeLayout>
 
-            <Button
-                android:id="@+id/btnUpdateDream"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:layout_marginTop="32dp"
-                android:backgroundTint="@color/secondary"
-                android:elevation="4dp"
-                android:letterSpacing="0.1"
-                android:text="SAVE TO JOURNAL"
-                android:textColor="?attr/colorOnSurface"
-                android:textStyle="bold"
-                app:cornerRadius="18dp" />
+        <EditText
+            android:id="@+id/editDreamContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="top"
+            android:hint="What happened in the moonlight?..."
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine|textCapSentences"
+            android:lineSpacingExtra="8dp"
+            android:scrollbars="vertical"
+            android:textColor="?attr/colorOnSurface"
+            android:textColorHint="?android:attr/textColorHint"
+            android:textSize="18sp" />
+    </LinearLayout>
 
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:hint="Tags (comma seperated)"
+        app:boxStrokeColor="@color/secondary"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:hintTextColor="@color/secondary"
+        app:startIconTint="?android:attr/textColorSecondary">
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/tagAutoComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:padding="12dp"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnUpdateDream"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="24dp"
+        android:backgroundTint="@color/secondary"
+        android:letterSpacing="0.1"
+        android:text="SAVE TO JOURNAL"
+        android:textAllCaps="true"
+        android:textColor="?attr/colorOnSurface"
+        android:textStyle="bold"
+        app:cornerRadius="18dp" />
+
+</LinearLayout>
