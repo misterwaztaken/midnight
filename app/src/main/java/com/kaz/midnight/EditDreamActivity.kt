@@ -32,6 +32,7 @@ class EditDreamActivity : AppCompatActivity() {
         val updateBtn = findViewById<Button>(R.id.btnUpdateDream)
         val checkFavorite = findViewById<CheckBox>(R.id.checkFavorite)
         val btnInfo = findViewById<ImageButton>(R.id.btnDreamInfo)
+        val btnDelete = findViewById<ImageButton>(R.id.btnDeleteDream)
 
         // tag autocomplete setup
         Thread {
@@ -88,6 +89,13 @@ class EditDreamActivity : AppCompatActivity() {
                 Toast.makeText(this, "New entry: No history yet.", Toast.LENGTH_SHORT).show()
             } else {
                 showDreamInfoDialog()
+            }
+        }
+
+        // delete dream button
+        btnDelete.setOnClickListener {
+            if (dreamId != -1) {
+                confirmDelete()
             }
         }
 
@@ -149,7 +157,7 @@ class EditDreamActivity : AppCompatActivity() {
         }
     }
 
-    // toolbar back arrow
+    // toolbar back arrow and delete
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
@@ -158,6 +166,20 @@ class EditDreamActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun confirmDelete() {
+        AlertDialog.Builder(this)
+            .setTitle("Delete Dream?")
+            .setMessage("This cannot be undone.")
+            .setPositiveButton("Delete") { _, _ ->
+                Thread {
+                    db.dreamDao().deleteById(dreamId)
+                    runOnUiThread { finish() }
+                }.start()
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
     }
 
     private fun showDreamInfoDialog() {

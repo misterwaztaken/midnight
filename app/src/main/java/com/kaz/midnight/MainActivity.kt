@@ -6,7 +6,9 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var adapter: DreamAdapter
     private lateinit var db: AppDatabase
+    private lateinit var emptyState: TextView
 
     // search/filter state
     private var currentSearchQuery = ""
@@ -69,6 +72,8 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("DREAM_ID", -1)
             startActivity(intent)
         }
+
+        emptyState = findViewById(R.id.txtEmptyState)
 
         // drawer menu clicks
         navView.setNavigationItemSelectedListener { menuItem ->
@@ -172,7 +177,11 @@ class MainActivity : AppCompatActivity() {
 
             // update the list on screen
             runOnUiThread {
+                val isEmpty = results.isEmpty()
+                val rv = findViewById<RecyclerView>(R.id.recyclerViewDreams)
                 adapter.updateList(results)
+                rv.visibility = if (isEmpty) View.GONE else View.VISIBLE
+                emptyState.visibility = if (isEmpty) View.VISIBLE else View.GONE
             }
         }.start()
     }

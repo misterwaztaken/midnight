@@ -40,9 +40,18 @@
                     android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/btnDeleteDream"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/ic_menu_delete"
+                        app:tint="?android:attr/textColorSecondary" />
+
+                    <ImageButton
                         android:id="@+id/btnDreamInfo"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:src="@drawable/ic_info"
                         app:tint="?android:attr/textColorSecondary" />
