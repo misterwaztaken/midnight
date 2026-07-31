@@ -6,7 +6,9 @@
   <img src="https://img.shields.io/github/v/release/misterwaztaken/midnight?style=flat-square&color=7B3FC4" alt="Latest Release" />
   <img src="https://img.shields.io/github/license/misterwaztaken/midnight?style=flat-square&color=7B3FC4" alt="License" />
   <img src="https://img.shields.io/badge/platform-Android-7B3FC4?style=flat-square" alt="Platform" />
-</div>
+  <a href="https://f-droid.org/packages/com.kaz.midnight"><img src="https://img.shields.io/f-droid/v/com.kaz.midnight" alt="F-Droid Webpage"/></a>
+  
+</div>  
 
 ---
 
