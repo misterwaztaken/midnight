@@ -222,7 +222,7 @@ class TagsActivity : AppCompatActivity() {
             .setNegativeButton("Cancel", null)
             .create()
 
-        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.window?.setBackgroundDrawableResource(R.drawable.rounded_dialog_bg)
         dialog.show()
     }
 
