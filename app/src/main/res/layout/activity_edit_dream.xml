@@ -25,7 +25,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="4dp"
                 android:letterSpacing="0.2"
                 android:text="NEW DREAM"
                 android:textColor="@color/secondary"
@@ -43,7 +42,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:src="@android:drawable/ic_menu_delete"
+                    android:src="@drawable/ic_delete"
                     app:tint="?android:attr/textColorSecondary" />
 
                 <ImageButton
@@ -88,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="8dp"
-        android:hint="Tags (comma seperated)"
+        android:hint="Tags (comma separated)"
         app:boxStrokeColor="@color/box_stroke_secondary"
         app:boxCornerRadiusBottomEnd="16dp"
         app:boxCornerRadiusBottomStart="16dp"

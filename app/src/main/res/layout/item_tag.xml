@@ -25,6 +25,6 @@
         android:id="@+id/btnDeleteTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_menu_delete"
+        android:src="@drawable/ic_delete"
         android:background="?attr/selectableItemBackgroundBorderless" />
 </LinearLayout>
