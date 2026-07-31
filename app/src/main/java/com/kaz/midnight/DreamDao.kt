@@ -57,7 +57,7 @@ interface DreamDao {
     fun deleteTagsForDream(dreamId: Int)
 
     @Transaction
-    @Query("SELECT * FROM tags JOIN DreamTagCrossRef ON tags.id = DreamTagCrossRef.tagId WHERE dreamId = :dreamId")
+    @Query("SELECT tags.* FROM tags JOIN DreamTagCrossRef ON tags.id = DreamTagCrossRef.tagId WHERE dreamId = :dreamId")
     fun getTagsForDream(dreamId: Int): List<Tag>
 
     @Transaction
@@ -66,7 +66,7 @@ interface DreamDao {
 
     @Transaction
     @Query("""
-        SELECT * FROM dreams 
+        SELECT dreams.* FROM dreams 
         INNER JOIN DreamTagCrossRef ON dreams.id = DreamTagCrossRef.dreamId 
         WHERE DreamTagCrossRef.tagId IN (:tagIds)
     """)

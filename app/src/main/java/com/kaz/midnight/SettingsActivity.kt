@@ -22,10 +22,7 @@ class SettingsActivity : AppCompatActivity() {
                 val inputStream = contentResolver.openInputStream(uri)
                 val jsonString = inputStream?.bufferedReader().use { it?.readText() } ?: ""
 
-                var importedCount = 0
-                var duplicateCount = 0
-
-                try {
+                val (importedCount, duplicateCount) = try {
                     // try new format (ExportData with tags and cross-refs)
                     val backup = com.google.gson.Gson().fromJson(jsonString, ExportData::class.java)
 
@@ -66,8 +63,7 @@ class SettingsActivity : AppCompatActivity() {
                         }
                     }
 
-                    importedCount = backup.dreams.size - dups
-                    duplicateCount = dups
+                    backup.dreams.size - dups to dups
                 } catch (e: Exception) {
                     // fall back to old format (just a list of dreams, no tags)
                     val listType = object : com.google.gson.reflect.TypeToken<List<Dream>>() {}.type
@@ -83,8 +79,7 @@ class SettingsActivity : AppCompatActivity() {
                         }
                     }
 
-                    importedCount = importedDreams.size - dups
-                    duplicateCount = dups
+                    importedDreams.size - dups to dups
                 }
 
                 runOnUiThread {

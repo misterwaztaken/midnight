@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -36,6 +37,11 @@ class MainActivity : AppCompatActivity() {
     private var isFilterFavoriteOnly = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // apply saved theme before any views inflate
+        val prefs = getSharedPreferences("prefs", MODE_PRIVATE)
+        val savedTheme = prefs.getInt("theme_mode", AppCompatDelegate.MODE_NIGHT_YES)
+        AppCompatDelegate.setDefaultNightMode(savedTheme)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
