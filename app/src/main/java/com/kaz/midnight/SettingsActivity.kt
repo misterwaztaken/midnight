@@ -121,7 +121,7 @@ class SettingsActivity : AppCompatActivity() {
         // buttons
         val btnImport = findViewById<Button>(R.id.btnImportDreams)
         btnImport.setOnClickListener {
-            importLauncher.launch(arrayOf("application/json"))
+            importLauncher.launch(arrayOf("application/json", "text/json", "text/plain", "application/octet-stream"))
         }
 
         val btnExport = findViewById<Button>(R.id.btnExportData)
