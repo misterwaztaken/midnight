@@ -89,7 +89,7 @@
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="8dp"
         android:hint="Tags (comma seperated)"
-        app:boxStrokeColor="@color/secondary"
+        app:boxStrokeColor="@color/box_stroke_secondary"
         app:boxCornerRadiusBottomEnd="16dp"
         app:boxCornerRadiusBottomStart="16dp"
         app:boxCornerRadiusTopEnd="16dp"

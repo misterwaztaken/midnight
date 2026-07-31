@@ -1,5 +1,5 @@
 <resources>
-    <style name="Theme.Midnight" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.Midnight" parent="Theme.Material3.Dark.NoActionBar">
         <item name="android:windowBackground">#0F0F1E</item>
         <item name="colorSurface">#1A1A2E</item>
         <item name="colorSurfaceVariant">#16213E</item>
@@ -18,7 +18,7 @@
         <item name="android:statusBarColor">#0F0F1E</item>
         <item name="android:navigationBarColor">#0F0F1E</item>
 
-        <item name="activityBackground">#121212</item>
-        <item name="dialogBackground">#1E1E1E</item>
+        <item name="activityBackground">#0F0F1E</item>
+        <item name="dialogBackground">#1A1A2E</item>
     </style>
 </resources>

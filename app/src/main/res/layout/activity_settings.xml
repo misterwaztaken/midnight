@@ -10,9 +10,10 @@
         android:id="@+id/settingsToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimaryContainer"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:title="Settings"
-        app:titleTextColor="?attr/colorOnSurface" />
+        app:titleTextColor="?attr/colorOnPrimary" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -75,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="App Theme"
-                app:boxStrokeColor="@color/primary"
+                app:boxStrokeColor="@color/box_stroke_primary"
                 app:hintTextColor="?android:attr/textColorSecondary">
 
                 <AutoCompleteTextView
