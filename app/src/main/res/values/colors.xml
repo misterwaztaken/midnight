@@ -5,4 +5,8 @@
     <color name="text_primary">#FFFFFF</color>
     <color name="text_hint">#444444</color>
     <color name="tag_default">#BB86FC</color>
+
+    <color name="nav_header_background">#6750A4</color>
+    <color name="nav_header_moon">#FFFFFF</color>
+    <color name="nav_menu_background">#57448B</color>
 </resources>
