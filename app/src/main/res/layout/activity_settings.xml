@@ -44,7 +44,7 @@
                 android:text="Import Dreams (.json)"
                 android:textColor="?attr/colorOnSurface"
                 app:strokeColor="@color/primary"
-                app:icon="@android:drawable/stat_sys_download"
+                app:icon="@drawable/ic_download"
                 app:iconTint="?attr/colorOnSurface"/>
 
             <com.google.android.material.button.MaterialButton
@@ -56,7 +56,7 @@
                 android:text="Export All Dreams"
                 android:textColor="?attr/colorOnSurface"
                 app:strokeColor="@color/primary"
-                app:icon="@android:drawable/ic_menu_save"
+                app:icon="@drawable/ic_save"
                 app:iconTint="?attr/colorOnSurface"/>
 
             <TextView

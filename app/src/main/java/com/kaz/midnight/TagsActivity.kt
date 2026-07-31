@@ -229,7 +229,7 @@ class TagsActivity : AppCompatActivity() {
     // search/filter
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
+        menuInflater.inflate(R.menu.tags_menu, menu)
         val searchItem = menu?.findItem(R.id.action_search)
         val searchView = searchItem?.actionView as androidx.appcompat.widget.SearchView
 
