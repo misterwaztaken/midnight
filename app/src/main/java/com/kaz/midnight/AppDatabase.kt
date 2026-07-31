@@ -19,8 +19,7 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "midnight-db"
-                ).addMigrations(Migrations.MIGRATION_2_3)
-                    .allowMainThreadQueries()
+                ).allowMainThreadQueries()
                     .build()
                 INSTANCE = instance
                 instance

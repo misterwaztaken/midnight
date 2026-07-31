@@ -158,7 +158,7 @@ class SettingsActivity : AppCompatActivity() {
         themeSelector.setAdapter(adapter)
 
         // set the current theme from prefs
-        val currentMode = prefs.getInt("theme_mode", AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        val currentMode = prefs.getInt("theme_mode", AppCompatDelegate.MODE_NIGHT_YES)
         val initialText = when(currentMode) {
             AppCompatDelegate.MODE_NIGHT_NO -> "Light"
             AppCompatDelegate.MODE_NIGHT_YES -> "Dark"
