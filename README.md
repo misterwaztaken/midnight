@@ -36,7 +36,7 @@ Midnight is a dream journaling app for Android. The goal is to keep it easy to u
 ## Download
 
 Grab the latest APK from the [Releases](https://github.com/misterwaztaken/midnight/releases) page.
-(Or [get it from F-Droid](https://img.shields.io/f-droid/v/com.kaz.midnight)!)
+(Or [get it from F-Droid](https://f-droid.com/packages/com.kaz.midnight)!)
 
 ## License
 
