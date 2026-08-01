@@ -1,0 +1,1 @@
+General UI and user experience updates; fixed light/dark mode, theming and icons have been updated for a more unified and consistent app design.
