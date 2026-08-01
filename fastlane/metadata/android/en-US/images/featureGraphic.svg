@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1024"
+   height="500"
+   viewBox="0 0 1024 500"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="featureGraphic.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.1412703"
+     inkscape:cx="566.03593"
+     inkscape:cy="321.13339"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1358"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="bg"
+       x1="0"
+       y1="0"
+       x2="715.54175"
+       y2="0"
+       gradientTransform="scale(1.4310835,0.69877124)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#0F0F1E"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#1A1A2E"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <rect
+     width="1024"
+     height="500"
+     fill="url(#bg)"
+     id="rect2"
+     style="fill:url(#bg)"
+     x="0"
+     y="0" />
+  <g
+     id="g4"
+     transform="translate(-2.7652305)">
+    <path
+       fill="#e94560"
+       d="m 249.27567,377.5416 c -71.68115,0 -129.78427,-58.10311 -129.78427,-129.78427 0,-59.93291 40.6215,-110.37905 95.84387,-125.29893 -10.2281,18.87037 -16.03653,40.49015 -16.03653,63.46115 0,73.66109 59.71708,133.3782 133.37817,133.3782 9.11146,0 18.00709,-0.91022 26.60245,-2.64619 -22.95224,36.57718 -63.63942,60.89004 -110.00369,60.89004 z"
+       id="path2"
+       style="stroke-width:0.938358" />
+    <g
+       id="g3"
+       transform="translate(-337.24889,18.487172)">
+      <text
+         x="837.94067"
+         y="237.59375"
+         font-family="'Segoe UI', sans-serif"
+         font-size="92px"
+         font-weight="bold"
+         fill="#ffffff"
+         id="text2"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:103.987px;font-family:Roboto;-inkscape-font-specification:'Roboto, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.70471">Midnight</text>
+      <text
+         x="874.48236"
+         y="296.18112"
+         font-family="'Segoe UI', sans-serif"
+         font-size="30px"
+         fill="#e0e0e0"
+         id="text3"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:33.9351px;font-family:Roboto;-inkscape-font-specification:'Roboto, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#e0e0e0;stroke-width:0.556312"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:33.9351px;font-family:Roboto;-inkscape-font-specification:'Roboto, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.556312"
+           id="tspan4">your dreams, your journal</tspan></text>
+    </g>
+  </g>
+</svg>
